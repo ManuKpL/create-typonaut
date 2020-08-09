@@ -1,0 +1,10 @@
+node_modules
+.eslintcache
+
+# output dir of babel
+dist
+# output dirs of jest coverage reports
+coverage
+test-results
+# tmp config created for lint-staged & tsc (not correctly removed on lint error)
+tsconfig.lint-staged.json

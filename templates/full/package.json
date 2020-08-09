@@ -1,0 +1,64 @@
+{
+  "name": "typonaut-boilerplate",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:compile": "sh scripts/build.sh",
+    "build:typecheck": "run-p typecheck:*",
+    "build": "run-s build:typecheck build:clean build:compile",
+    "dev:build": "run-s \"build:compile -w\"",
+    "dev:run": "wait-on dist/index.js && nodemon dist",
+    "dev:clean": "rimraf dist",
+    "dev": "sh scripts/dev.sh",
+    "start": "node dist",
+    "test": "jest --colors --coverage",
+    "tdd": "jest --colors --watchAll",
+    "typecheck:lint": "sh scripts/lint.sh",
+    "typecheck:ts": "tsc"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "engines": {
+    "node": ">= 12.18.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "run-s test"
+    }
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/plugin-transform-typescript": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.2.2",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2",
+    "jest-cucumber": "^3.0.0",
+    "jest-junit": "^11.1.0",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7",
+    "wait-on": "^5.2.0"
+  }
+}
