@@ -2,6 +2,10 @@
   "name": "@manukpl/create-typonaut",
   "description": "CLI project to initialize typescript repositories",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ManuKpL/create-typonaut.git"
+  },
   "main": "src/cli.ts",
   "bin": {
     "create-typonaut": "./bin/create-typonaut"
