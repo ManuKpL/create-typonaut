@@ -1,4 +1,4 @@
-import { Initializer } from './initializers';
+import { Initializer } from '../initializers';
 import { readParams } from './readParams';
 
 type Command = () => Promise<void>;

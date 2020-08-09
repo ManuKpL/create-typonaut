@@ -1,6 +1,6 @@
 import { readArguments, promptUser } from './adapters';
 import { gitInitializer, copyTemplateInitializer } from './initializers';
-import { readCommands } from './readCommands';
+import { readCommands } from './commands';
 
 export async function run(args: string[]): Promise<void> {
   const initializers = [gitInitializer, copyTemplateInitializer];
