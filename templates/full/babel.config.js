@@ -3,6 +3,6 @@ module.exports = {
   plugins: [
     '@babel/plugin-transform-typescript',
     '@babel/plugin-transform-runtime',
-    ['module-resolver', { alias: { '@root': './src' } }],
+    ['module-resolver', { alias: { '@src': './src' } }],
   ],
 };
