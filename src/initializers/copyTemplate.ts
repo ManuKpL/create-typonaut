@@ -13,8 +13,8 @@ export const copyTemplateInitializer: Initializer<boolean> = {
   defaultValue: true,
   value: true,
   prompt: 'Copy template files in target directory?',
-  handler: async (initParmas) => {
-    await copy(initParmas.source, initParmas.destination, {
+  handler: async (initParams) => {
+    await copy(initParams.source, initParams.destination, {
       clobber: false,
     }).catch((err) => {
       console.error(err);
