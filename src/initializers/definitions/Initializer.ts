@@ -2,6 +2,7 @@ import { InitializerType } from './InitializerType';
 import { Initialize } from './Initialize';
 
 export interface Initializer<T = unknown> {
+  priority: number;
   name: string;
   argPath: string;
   flag: boolean;

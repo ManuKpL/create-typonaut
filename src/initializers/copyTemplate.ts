@@ -6,6 +6,7 @@ import { Initializer, InitializerType } from './definitions';
 const copy = promisify(ncp);
 
 export const copyTemplateInitializer: Initializer<boolean> = {
+  priority: 10,
   name: 'copyTemplate',
   argPath: '--copyTemplate',
   flag: true,
@@ -13,7 +14,7 @@ export const copyTemplateInitializer: Initializer<boolean> = {
   defaultValue: true,
   value: true,
   prompt: 'Copy template files in target directory?',
-  handler: async (initParams) => {
+  async handler(initParams) {
     await copy(initParams.source, initParams.destination, {
       clobber: false,
     }).catch((err) => {
