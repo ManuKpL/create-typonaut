@@ -14,7 +14,7 @@ function parseFlag({ argPath, type }: Initializer): arg.Spec {
   };
 }
 
-export function buildFlags(initializers: Initializer<unknown>[]) {
+export function buildFlags(initializers: Initializer<unknown>[]): arg.Spec {
   return initializers
     .filter(({ flag }) => flag)
     .map(parseFlag)

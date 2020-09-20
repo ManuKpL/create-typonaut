@@ -8,7 +8,7 @@
     "build:compile": "sh scripts/build.sh",
     "build:typecheck": "run-p typecheck:*",
     "build": "run-s build:typecheck build:clean build:compile",
-    "dev:build": "run-s \"build:compile -w\"",
+    "dev:build": "sh scripts/build.dev.sh",
     "dev:run": "wait-on dist/index.js && nodemon dist",
     "dev:clean": "rimraf dist",
     "dev": "sh scripts/dev.sh",
