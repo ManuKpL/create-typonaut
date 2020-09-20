@@ -1,4 +1,6 @@
-import { readArguments, promptUser } from './adapters';
+import { readArguments } from './arguments';
+
+import { promptUser } from './adapters';
 import { gitInitializer, copyTemplateInitializer, projectNameInitializer } from './initializers';
 import { readCommands } from './commands';
 
@@ -12,8 +14,16 @@ async function execute(commands: Command[]) {
 
 export async function run(args: string[]): Promise<void> {
   const initializers = [projectNameInitializer, gitInitializer, copyTemplateInitializer];
-  const initalOptions = readArguments(args, initializers);
-  const finalOptions = await promptUser(initalOptions);
+  const options = initializers.map((i) => ({
+    name: i.name,
+    path: i.argPath,
+    initialValue: i.value,
+    parser: i.flag ? Boolean : String,
+  }));
+
+  const inputedValues = readArguments(args, options);
+  const initialOptions = initializers.map((i) => ({ ...i, value: inputedValues[i.name] }));
+  const finalOptions = await promptUser(initialOptions);
   const commands = readCommands(finalOptions);
   return execute(commands);
 }

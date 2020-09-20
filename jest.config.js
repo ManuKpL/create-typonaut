@@ -1,13 +1,13 @@
 module.exports = {
-  rootDir: './src',
+  rootDir: '.',
   moduleFileExtensions: ['ts', 'js', 'json'],
   transform: {
     '\\.(j|t)s$': 'babel-jest',
   },
   testEnvironment: 'node',
-  testRegex: '\\.(test|spec)\\.(j|t)s$',
+  testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s'],
   collectCoverageFrom: [
-    '**/*.{js,ts}',
+    '<rootDir>/src/**/*.{js,ts}',
     '!**/index.{js,ts}',
     '!**/*.{spec,test,mock}.{js,ts}',
     '!**/{__tests__,tests,__mocks__,mocks}/**/*',

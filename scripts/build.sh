@@ -3,5 +3,5 @@
 babel src \
   -d lib \
   --extensions '.ts,.js' \
-  --ignore src/**/__tests__/**/*,src/**/*.test.ts,src/**/*.spec.ts \
+  --ignore **/__tests__/**/*,**/__mocks__/**/*,**/mocks/**/*,src/**/*.test.ts,src/**/*.spec.ts \
   "${@}"
