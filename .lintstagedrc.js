@@ -8,7 +8,7 @@ const read = promisify(readFile);
 const write = promisify(writeFile);
 
 const COMMANDS = {
-  eslint: (files) => `eslint ${files.join(' ')} --max-warnings=5`,
+  eslint: (files) => `sh ./scripts/lint.sh ${files.join(' ')}`,
   tsc: (project) => `tsc -p ${project}`,
   cleanConfig: (configFile) => `rimraf ${configFile}`,
 };

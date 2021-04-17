@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-eslint src/**/*.{ts,js} \
+eslint --ext .js,.ts \
   --no-error-on-unmatched-pattern \
-  --max-warnings=0
+  --max-warnings=0 \
+  "${@:-.}"
