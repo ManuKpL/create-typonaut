@@ -11,7 +11,7 @@ export const projectNameInitializer: Initializer<string> = {
   priority: 100,
   name: 'destination',
   argPath: '--name',
-  flag: true,
+  flag: false,
   type: InitializerType.INPUT,
   defaultValue: 'my-typonaut',
   value: null,
