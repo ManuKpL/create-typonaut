@@ -16,7 +16,8 @@
   "files": [
     "bin/",
     "lib/",
-    "templates/"
+    "templates/",
+    "templates/full/.gitignore"
   ],
   "keywords": [
     "cli",
