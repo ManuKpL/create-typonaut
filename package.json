@@ -40,6 +40,7 @@
     "typecheck:ts": "tsc"
   },
   "dependencies": {
+    "@babel/runtime": "^7.13.10",
     "arg": "^5.0.0",
     "execa": "^5.0.0",
     "inquirer": "^8.0.0",
