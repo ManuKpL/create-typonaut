@@ -1,25 +1,29 @@
 {
   "root": true,
-  "parser": "babel-eslint",
-  "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "parser": "@babel/eslint-parser",
+  "plugins": ["prettier", "jest", "import"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:jest/recommended", "plugin:jest/style"],
   "env": {
     "jest": true,
     "node": true
   },
   "rules": {
-    "prettier/prettier": 2
+    "prettier/prettier": "warn",
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "jest/no-standalone-expect": ["error", { "additionalTestBlockFunctions": ["cases"] }]
   },
   "overrides": [
     {
       "files": ["**/*.ts"],
+      "plugins": ["@typescript-eslint", "prettier", "jest", "import"],
       "extends": [
         "eslint:recommended",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
-      ],
-      "plugins": ["@typescript-eslint", "prettier"]
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ]
     }
   ]
 }
