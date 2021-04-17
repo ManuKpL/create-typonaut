@@ -1,8 +1,18 @@
 import { join } from 'path';
 
-export function readParams() {
+import { Initializer } from '../initializers';
+
+interface CommandParams {
+  destination: string;
+  source: string;
+}
+
+export function readParams(options: Initializer[]): CommandParams {
+  const destinationOption = options.find((o) => o.name === 'destination');
+  const destinationPath = join(process.cwd(), (destinationOption?.value as string) ?? 'typonaut');
+
   return {
-    destination: process.cwd(),
+    destination: destinationPath,
     source: join(__dirname, '../../templates/full'),
   };
 }

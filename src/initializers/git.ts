@@ -3,6 +3,7 @@ import execa from 'execa';
 import { Initializer, InitializerType } from './definitions';
 
 export const gitInitializer: Initializer<boolean> = {
+  priority: 10,
   name: 'initializeGit',
   argPath: '--git',
   flag: true,
@@ -10,9 +11,9 @@ export const gitInitializer: Initializer<boolean> = {
   defaultValue: false,
   value: null,
   prompt: 'Initialize a git repository?',
-  handler: async (initParmas) => {
+  async handler(initParams) {
     const result = await execa('git', ['init'], {
-      cwd: initParmas.destination,
+      cwd: initParams.destination,
     });
 
     if (result.failed) {
