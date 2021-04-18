@@ -1,3 +1,3 @@
-export * from './merge';
+export * from './applyMock';
 export * from './sortBy';
 export * from './typeUtils';

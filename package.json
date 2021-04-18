@@ -24,6 +24,9 @@
     "typescript"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "build:clean": "rimraf lib",
     "build:compile": "sh scripts/build.sh",
@@ -34,6 +37,7 @@
     "dev:clean": "rimraf lib",
     "dev": "sh scripts/dev.sh",
     "prepare": "husky install",
+    "prepack": "run-s build",
     "start": "node lib",
     "test": "jest --colors --coverage",
     "tdd": "jest --colors --watchAll",
@@ -65,7 +69,7 @@
     "babel-jest": "^26.3.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "concurrently": "^6.0.2",
-    "eslint": "^7.9.0",
+    "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.3.5",
