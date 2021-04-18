@@ -1,7 +1,7 @@
 {
   "name": "@manukpl/create-typonaut",
   "description": "CLI project to initialize typescript repositories",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/ManuKpL/create-typonaut.git"
